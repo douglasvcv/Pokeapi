@@ -2,23 +2,18 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Searchbar from './components/Searchbar'
-import {searchPokemon} from './api'
+import Pokedex from './components/Pokedex'
 
 function App() {
 
-const onSearchHandler = async (pokemon) =>{
-  console.log(`Pokemonn: ${pokemon}`)
-  
-}
+
 
   const [count, setCount] = useState(0)
   return (
     <>
     <Navbar></Navbar>
-    <Searchbar
-    onSearch={onSearchHandler}
-    ></Searchbar>
-
+    <Searchbar></Searchbar>
+    <Pokedex></Pokedex>
     </>
    
   )
