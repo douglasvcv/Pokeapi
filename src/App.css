@@ -51,8 +51,9 @@ nav{
 }
 .pokedex-grind{
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-template-columns: repeat(3,1fr);
+  
 }
 .pokemon-card{
   display: flex;
@@ -63,6 +64,43 @@ nav{
   width: 70px;
   height: 70px;
   margin: 0 10px;
+}
+.pokemon-card{
+  background-color: rgb(205, 156, 156);
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 10px 0px;
+  flex:1;
+ 
+}
+.card-top{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+.card-top h3{
+  text-transform: capitalize;
+}
+
+.card-bottom{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.pokemon-type{
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+}
+.pokemon-type-text{
+  margin-right: 10px;
+  text-transform: capitalize;
 }
 
 .App{
