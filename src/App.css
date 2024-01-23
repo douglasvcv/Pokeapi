@@ -42,14 +42,31 @@ nav{
   color: white;
   cursor: pointer;
 }
-.App{
-  text-align: center;
-}
-
 .pokedex-header{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
+.pokedex-grind{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.pokemon-card{
+  display: flex;
+  box-shadow: 4px 4px 4px (0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.pokemon-image{
+  width: 70px;
+  height: 70px;
+  margin: 0 10px;
+}
+
+.App{
+  text-align: center;
+}
+
+
