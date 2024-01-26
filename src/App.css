@@ -49,6 +49,13 @@ nav{
   align-items: center;
   padding: 10px;
 }
+.pokedex-top{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  
+  width: 45vw;
+}
 .pokedex-grind{
   display: grid;
   gap: 20px;
@@ -101,6 +108,11 @@ align-items: center;
 .pokemon-type-text{
   margin-right: 10px;
   text-transform: capitalize;
+}
+.pagination-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .App{
