@@ -3,8 +3,9 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import Pokedex from "./components/Pokedex";
-import { getPokemon, getPokemonData } from "./api";
+import { getPokemon, getPokemonData, searchPokemon } from "./api";
 import { FavoriteProvider } from "./assets/contexts/favoritesContext";
+
 
 const favoriteKey = "f"
 
@@ -12,6 +13,7 @@ function App() {
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [notFound, setNotFound] = useState([false]);
   const [pokemons, setPokemons] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
@@ -34,7 +36,7 @@ function App() {
   };
 
   const loadFavoritePokemons = () => {
-   const pokemtons = JSON.parse(window.localStorage.getItem(favoriteKey)) || []
+   const pokemons = JSON.parse(window.localStorage.getItem(favoriteKey)) || []
   setFavorites(pokemons)
   }
 
@@ -54,9 +56,25 @@ function App() {
     } else {
       updateFavorites.push(name);
     }
-    window.localStorage.setItem(favoriteIndex, JSON.stringify(updateFavorites))
+    window.localStorage.setItem(favoriteKey, JSON.stringify(updateFavorites)) 
     setFavorites(updateFavorites);
   };
+
+  const onSearchHandler = async (pokemon) => {
+    if(!pokemon){
+     return fetchPokemons()
+    }
+
+    setLoading(true)
+    setNotFound(false)
+    const result = await searchPokemon(pokemon)
+    if(!result){
+      setNotFound(true)
+    } else{
+      setPokemons([result])
+    }
+    setLoading(false)
+  }
 
   return (
     <FavoriteProvider
@@ -65,9 +83,12 @@ function App() {
         updateFavoritePokemons: updateFavotitePokemons,
       }}
     >
-      <>
+      <div className="container-all">
         <Navbar></Navbar>
-        <Searchbar></Searchbar>
+        <Searchbar
+        onSearch={onSearchHandler}
+        
+        ></Searchbar>
         <Pokedex
           pokemons={pokemons}
           loading={loading}
@@ -75,7 +96,7 @@ function App() {
           totalPages={totalPages}
           setPage={setPage}
         ></Pokedex>
-      </>
+      </div>
     </FavoriteProvider>
   );
 }

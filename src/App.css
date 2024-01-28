@@ -1,17 +1,33 @@
 *{
   padding: 0px;
   margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
+}
+body{
+  background: linear-gradient(#e18181, #4f5ad6);
+  background-repeat: no-repeat;
+  height: 160vh;
 }
 nav{
  height: 100px;
  display: flex;
  justify-content: space-evenly;
  align-items: center;
+ color: white;
+}
+.container-all{
+  background-color: rgb(50, 46, 46);
+  width: max-content;
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-img{
   width: 160px;
 }
+
 .searchbar-container{
   display: flex;
   justify-content: center;
@@ -22,7 +38,7 @@ nav{
 }
 .searchbar {
   margin-right: 20px;
-  background: white;
+  
 }
 .searchbar input{
   padding: 10px;
@@ -53,7 +69,7 @@ nav{
   flex-direction: row;
   display: flex;
   justify-content: space-between;
-  
+  color: white;
   width: 45vw;
 }
 .pokedex-grind{
@@ -73,7 +89,11 @@ nav{
   margin: 0 10px;
 }
 .pokemon-card{
-  background-color: rgb(205, 156, 156);
+  background-color: rgb(194, 194, 194);
+  transition: 0.6s ease-in-out;
+}
+.pokemon-card:hover{
+  background-color: #0e6f9f;
 }
 .card-body{
   display: flex;
@@ -113,6 +133,7 @@ align-items: center;
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: white;
 }
 
 .App{
