@@ -141,3 +141,39 @@ align-items: center;
 }
 
 
+/*Responsividade*/
+@media(max-width:900px){
+  .pokedex-grind{
+    grid-template-columns: repeat(2,1fr);
+    
+  }
+  body{
+    height: 220vh;
+  }
+}
+@media(max-width:450px){
+  .pokedex-grind{
+    grid-template-columns: repeat(1,1fr);
+    
+  }
+  body{
+    height: 420vh;
+    max-height: 500vh;
+  }
+  .pokedex-top{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .pokedex-top h1{
+    margin: 0 20px 0 -10px;
+  }
+  .pagination-container button{
+    padding: 5px;
+    
+  }
+  .pagination-container div{
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+  }
+}

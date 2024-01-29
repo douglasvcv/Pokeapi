@@ -17,7 +17,7 @@ const Pokedex = (props) => {
  }
   return (
     <div className="pokedex-header">
-      <div className="pokedex-top">
+    <div className="pokedex-top">
         <h1>Pokedex</h1>
     <Pagination
     page={page+1}
